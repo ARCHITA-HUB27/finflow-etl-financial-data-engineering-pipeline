@@ -12,11 +12,15 @@ def apply_filters(df):
 
     if "type" in df.columns:
         types = sorted(df["type"].unique().tolist())
-        transaction_types = st.sidebar.multiselect(
-            "Transaction Type",
-            options=types,
-            default=types,
-        )
+
+        st.sidebar.markdown("**Transaction Type**")
+
+        transaction_types = []
+
+        for t in types:
+            if st.sidebar.checkbox(t, value=True):
+                transaction_types.append(t)
+
         filtered = filtered[filtered["type"].isin(transaction_types)]
 
     # ---------------- Fraud status ----------------
@@ -71,7 +75,7 @@ def apply_filters(df):
     st.sidebar.markdown("---")
     st.sidebar.metric("Rows in view", f"{len(filtered):,}", f"of {len(df):,} total")
 
-    if st.sidebar.button("🔄 Reset Filters", width="stretch"):
+    if st.sidebar.button("🔄 Reset Filters", use_container_width=True):
         st.rerun()
 
     return filtered
