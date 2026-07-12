@@ -136,13 +136,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-if using_synthetic:
-    st.info(
-        "📎 No source dataset found at `data/processed/cleaned_transactions.csv` — "
-        "showing a generated PaySim-style sample dataset so you can explore the dashboard. "
-        "Drop your own file in that path to use real data.",
-        icon="ℹ️",
-    )
 
 # ---------------- METRICS ----------------
 
