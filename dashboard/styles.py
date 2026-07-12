@@ -215,62 +215,75 @@ def load_css():
         box-shadow: 0 8px 18px rgba(56,189,248,0.35);
     }
 
-    /* ---------------- INPUTS (selectbox / multiselect) ---------------- */
+   /* ---------------- INPUTS (selectbox / multiselect) ---------------- */
 
-    /* the closed input box itself */
-    div[data-baseweb="select"] > div {
-        background: #16213A !important;
-        border-color: #22314F !important;
-        border-radius: 10px !important;
-        color: #F1F5F9 !important;
-    }
+/* Main input box */
+div[data-baseweb="select"] > div {
+    background: #16213A !important;
+    border: 1px solid #22314F !important;
+    border-radius: 10px !important;
+    color: #F1F5F9 !important;
+    padding-left: 8px !important;
+    overflow: visible !important;
+}
 
-    /* selected value text + placeholder inside the closed box */
-    div[data-baseweb="select"] * {
-        color: #F1F5F9 !important;
-        fill: #F1F5F9 !important;
-    }
+/* Text inside the select */
+div[data-baseweb="select"] input,
+div[data-baseweb="select"] span {
+    color: #F1F5F9 !important;
+}
 
-    /* multiselect selected "chips" */
-    span[data-baseweb="tag"] {
-        background: linear-gradient(90deg, #2563EB, #38BDF8) !important;
-        color: white !important;
-        border-radius: 6px !important;
-    }
+/* ---------- MULTISELECT TAGS ---------- */
 
-    span[data-baseweb="tag"] * {
-        color: white !important;
-        fill: white !important;
-    }
+span[data-baseweb="tag"] {
+    background: linear-gradient(90deg, #2563EB, #38BDF8) !important;
+    color: #FFFFFF !important;
+    border-radius: 8px !important;
+    padding: 3px 8px !important;
+    margin: 2px !important;
+    max-width: none !important;
+    overflow: visible !important;
+}
 
-    /* the dropdown menu popover (rendered in a portal) */
-    div[data-baseweb="popover"] div[data-baseweb="menu"],
-    ul[data-baseweb="menu"] {
-        background: #16213A !important;
-        border: 1px solid #334155 !important;
-    }
+span[data-baseweb="tag"] * {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    white-space: nowrap !important;
+}
 
-    li[data-baseweb="menu-item"],
-    div[data-baseweb="popover"] li {
-        background: #16213A !important;
-        color: #F1F5F9 !important;
-    }
+/* Dropdown menu */
+div[data-baseweb="popover"] div[data-baseweb="menu"],
+ul[data-baseweb="menu"] {
+    background: #16213A !important;
+    border: 1px solid #334155 !important;
+}
 
-    li[data-baseweb="menu-item"]:hover,
-    div[data-baseweb="popover"] li:hover {
-        background: #1E293B !important;
-    }
+li[data-baseweb="menu-item"],
+div[data-baseweb="popover"] li {
+    background: #16213A !important;
+    color: #F1F5F9 !important;
+}
 
-    /* sliders */
-    .stSlider label, .stSlider [data-testid="stTickBarMin"], .stSlider [data-testid="stTickBarMax"] {
-        color: #94A3B8 !important;
-    }
+li[data-baseweb="menu-item"]:hover,
+div[data-baseweb="popover"] li:hover {
+    background: #1E293B !important;
+}
 
-    /* generic text inputs / number inputs */
-    input, textarea {
-        background: #16213A !important;
-        color: #F1F5F9 !important;
-    }
+/* Sliders */
+.stSlider label,
+.stSlider [data-testid="stTickBarMin"],
+.stSlider [data-testid="stTickBarMax"] {
+    color: #94A3B8 !important;
+}
+
+/* Generic inputs */
+input,
+textarea {
+    background: #16213A !important;
+    color: #F1F5F9 !important;
+}
 
     /* ---------------- SCROLLBAR ---------------- */
 
